@@ -12,6 +12,7 @@
     {% endblock %}
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <body>
 
@@ -26,35 +27,34 @@
 
     <form method="post">
         {%csrf_token%}
-        <h1>Форма ввода вопроса</h1>
+        <h1 style="padding-left: 150px; padding-right:100px; padding-top:10px">Форма ввода вопроса</h1>
         <!-- В форме должен быть action, вызывающий отправку запроса на бэкенд -->
 
 
-
-        <p><b>
+        <p style="padding-left: 150px; padding-right:100px; padding-top:10px"><b>
         {% block v1 %}
         {{vopr.v1}}
         {% endblock %}
         </b></p>
-        <p><input name="choice" type="radio" value="1"
+        <p style="padding-left: 150px; padding-right:100px; padding-top:10px"><input name="choice" type="radio" value="1"
         />{% block o1 %}
         {{vopr.v2}}
         {% endblock %}</p>
-        <p><input name="choice" type="radio" value="2" />{% block o2 %}
+        <p style="padding-left: 150px; padding-right:100px; padding-top:5px"><input name="choice" type="radio" value="2" />{% block o2 %}
         {{vopr.v3}}
         {% endblock %}</p>
-        <p><input name="choice" type="radio" value="3" onclick=views.about2 />{% block o3 %}
+        <p style="padding-left: 150px; padding-right:100px; padding-top:5px"><input name="choice" type="radio" value="3" onclick=views.about2 />{% block o3 %}
         {{vopr.v4}}
         {% endblock %}</p>
-        <p><input name="choice" type="radio" value="4" />{% block o4 %}
+        <p style="padding-left: 150px; padding-right:100px; padding-top:5px"><input name="choice" type="radio" value="4" />{% block o4 %}
         {{vopr.v5}}
         {% endblock %}</p>
-        <p><button type="submit" value="Дать ответ" /></p>
+        <p style="padding-left: 150px; padding-right:100px; padding-top:5px"><button type="submit" value="Ответить">Ответить</button></p>
 
 
-              <form action="main/contact_form.html" target="main/contact_form.html">
+              <p style="padding-left: 150px; padding-right:100px; padding-top:5px"><form action="main/contact_form.html" target="main/contact_form.html">
                 <button>Форма контактов</button>
-              </form>
+              </form></p>
        <!-- При нажатии на "Дать ответ" должен отправляться на бэкенд запрос, содержащий номер вопроса и номер ответа,
         бэкенд проверяет верность ответа по БД, и возвращает ответ с информацией о том, был ответ пользователя на
         тест верен или нет. Фронтенд получает ответ и отображает информацию из него -->
